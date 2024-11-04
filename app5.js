@@ -34,14 +34,38 @@ app.get("/janken", (req, res) => {
   console.log( {hand, win, total});
   const num = Math.floor( Math.random() * 3 + 1 );
   let cpu = '';
+  let judgement = '';
   if( num==1 ) cpu = 'グー';
   else if( num==2 ) cpu = 'チョキ';
   else cpu = 'パー';
-  // ここに勝敗の判定を入れる
-  // 今はダミーで人間の勝ちにしておく
-  let judgement = '勝ち';
-  win += 1;
   total += 1;
+  if(isNaN(total)){
+    total = 0;
+  }
+  if(isNaN(win)){
+    win = 0;
+  }
+
+  if(hand=='グー'){
+    if(cpu == 'グー') judgement = '引き分け';
+    else if(cpu == 'チョキ'){
+      judgement = '勝ち' 
+      win += 1;}
+    else if(cpu == 'パー')judgement = '負け';
+  }else if(hand=='チョキ'){
+    if(cpu == 'グー') judgement = '負け';
+    else if(cpu == 'チョキ')judgement = '引き分け';
+    else if(cpu == 'パー'){
+      judgement = '勝ち'
+      win += 1;}
+  }else if(hand=='パー'){
+    if(cpu == 'グー'){
+      judgement = '勝ち'
+      win += 1}
+    else if(cpu == 'チョキ')judgement = '負け';
+    else if(cpu == 'パー')judgement = '引き分け';
+  }
+  
   const display = {
     your: hand,
     cpu: cpu,
