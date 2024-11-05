@@ -18,6 +18,9 @@ git commit -am 'コメント'
 git push
 ```
 
+## サーバーの起動について
+
+
 
 
 
@@ -53,19 +56,20 @@ flowchart TD;
 
 start["開始"];
 end1["終了"]
-if{"条件に合うか"}
-win[勝ち]
-loose["負け"]
+if{"じゃんけんの勝敗"}
+win["試合数と勝数を1増やす"]
+loose["試合数を1増やす"]
+draw["試合数を1増やす"]
+
 
 start --> if
-if -->|yes| win
+if -->|勝ち| win
 win --> end1
-if -->|no| loose
-loose --> ifs
-ifs --> |yes| maru
-maru --> end1
-ifs --> |no| batu
-batu --> end1
+if -->|引き分け| draw
+draw --> end1
+if --> |負け| loose
+loose --> end1
+
 ```
 
 
