@@ -73,7 +73,7 @@ views/slot.ejs | 画面のテンプレート
 
 ## フローチャート
 
-###　じゃんけん
+じゃんけん
 
 ```mermaid
 flowchart TD;
@@ -94,7 +94,7 @@ if --> |負け| draw
 
 ```
 
-###　スロット
+スロット
 
 ```mermaid
 flowchart TD;
@@ -120,7 +120,7 @@ result --> end1
 
 ```
 
-###　パズル
+パズル
 
 ```mermaid
 flowchart TD;
