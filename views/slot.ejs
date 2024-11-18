@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>スロット</title>
+</head>
+<body>
+    <%= number1 %>　
+    <%= number2 %>　
+    <%= number3 %>　
+    <p><%= luck %></p>
+    <p><%= game_f %></p>
+    所持コイン<%= money_f %>
+
+    <hr>
+    <form action="/slot" method="get">
+        いくら賭ける？<input type="number" name="bet_f" id="bet_f"><br>
+        <input type="submit" value="送信">
+        <br />
+        <br />
+        <button type="submit" name="reset" value="1">リセット</button><br />
+        <input type="hidden" name="money_f" value = "<%= money_f %>" >
+        <input type="hidden" name="game_f" value="<%= game_f %>">
+    </form>
+</body>
+</html>

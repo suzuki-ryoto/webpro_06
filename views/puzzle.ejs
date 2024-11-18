@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>パズル</title>
+</head>
+<body>
+    <p>ボタンを押してマークを揃えよう！</p>
+    <p>押したボタンとその両隣が反転するよ</p>
+    <p><%= game_f %></p>
+    <hr>
+    <form action="/puzzle" method="get">
+        <button type="submit" name="button" value="1"><%= ps1 %>　　</button>
+        <button type="submit" name="button" value="2"><%= ps2 %>　　</button>
+        <button type="submit" name="button" value="3"><%= ps3 %>　　</button>
+        <button type="submit" name="button" value="4"><%= ps4 %>　　</button>
+        <button type="submit" name="button" value="5"><%= ps5 %>　　</button><br />
+        <br />
+        <br />
+        <button type="submit" name="reset" value="1">リセット</button><br />
+        <input type="hidden" name="count" value="<%= count %>">
+        <input type="hidden" name="p1" value="<%= p1 %>">
+        <input type="hidden" name="p2" value="<%= p2 %>">
+        <input type="hidden" name="p3" value="<%= p3 %>">
+        <input type="hidden" name="p4" value="<%= p4 %>">
+        <input type="hidden" name="p5" value="<%= p5 %>">
+        <input type="hidden" name="game_f" value="<%= game_f %>">
+    </form>
+</body>
+</html>
