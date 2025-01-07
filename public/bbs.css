@@ -1,0 +1,37 @@
+.cover {
+    border-bottom: 1px solid #c0c0c0;
+    margin: 3px;
+    display: flex;
+    justify-content: flex-start; /* 左寄せ配置 */
+    align-items: center; /* 縦方向の位置を揃える */
+}
+
+.order {
+    width: 8em;
+    order: -1; /* 並び順を一番左に設定 */
+}
+
+.name {
+    margin-left: 10px;
+    font-weight: bold;
+    width: 8em;
+    order: 0; /* 並び順を一番左に設定 */
+}
+
+.mes {
+    margin-left: 10px;
+    word-wrap: break-word; /* メッセージが長い場合に折り返す */
+    order: 1; /* 並び順を一番左に設定 */
+}
+
+.delete {
+    margin-left: 10px; /* メッセージとの間に余白を追加 */
+    width: auto; /* ボタン幅を自動調整 */
+    cursor: pointer;
+    flex-shrink: 0; /* ボタンの幅を固定 */
+    order: 2; /* 並び順を一番左に設定 */
+}
+
+.highlight {
+    background-color: yellow; /* 検索結果を強調表示 */
+}
