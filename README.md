@@ -161,4 +161,8 @@ sequenceDiagram
   BBSサーバ ->> BBSクライアント:掲示データ
   BBSクライアント ->> BBSサーバ:Check(新規チェック)
   BBSサーバ ->> BBSクライアント:全書き込み数
+  BBSクライアント ->> BBSサーバ:searchPosts(検索)
+  BBSサーバ ->> BBSクライアント:対象となる投稿のID
+  BBSクライアント ->> BBSサーバ:sakujo(削除)
+  BBSサーバ ->> BBSクライアント:対象の有無
 ```

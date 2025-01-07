@@ -115,9 +115,7 @@ app.post("/post", (req, res) => {
 
 app.post("/searchPosts", (req, res) => {
   const keyword = req.body.keyword;
-  const posts = req.body.posts;
   console.log("検索キーワード:", keyword);
-  console.log("投稿:", posts);
   const matchedIds = bbs
       .filter(post => post.name.includes(keyword) || post.message.includes(keyword))
       .map(post => post.order);
