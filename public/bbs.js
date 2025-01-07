@@ -58,9 +58,11 @@ document.querySelector('#check').addEventListener('click', () => {
                     'Content-Type': 'application/x-www-form-urlencoded'               
                 }
             }
+            
             const url = "/read";
             fetch( url, params )
             .then( (response) => {
+                
                 if( !response.ok ) {
                     throw new Error('Error');
                 }
@@ -95,9 +97,11 @@ document.querySelector('#check').addEventListener('click', () => {
                     cover.appendChild(delete_button);
                     cover.appendChild( mes_area );
 
-
-
                     bbs.appendChild( cover );
+                    const covers = document.querySelectorAll('.cover');
+                    covers.forEach(cover => {
+                        cover.style.display = '';
+                    });
                 }
             })
         }
@@ -161,6 +165,7 @@ function deletePost(postId, order,name,message,color) {
     const url = "/sakujo"; 
     fetch(url, params)
         .then((response) => {
+            console.log( response );
             if (!response.ok) {
                 throw new Error('Error');
             }
